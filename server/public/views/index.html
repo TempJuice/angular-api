@@ -3,11 +3,13 @@
 
 <head>
     <title>Angular-Api Lecture</title>
-    <script src="angular.min.js"></script>
-    <script src="client.js"></script>
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/giphys.controller.js"></script>
+    <script src="scripts/services/giphys.service.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="SwapiController as vm">
+<body ng-app="myApp" ng-controller="GiphyController as vm">
     <h1>Giphy API</h1>
     <div>
         <label for="Search">Search for Giphy by keyword: </label>
@@ -15,18 +17,19 @@
         <button ng-click="vm.searchGiphy(vm.newSearchKw)">Search</button>
         <ul ng-repeat="gifs in vm.searchGif">
 
-            <img ng-src="{{gifs.images.downsized.url}}" />
+            <img ng-src="{{gifs.images.downsized.url}}"/>
 
         </ul>
     </div>
 
 
-    <!-- <div>
+    <div>
 
         <p><button ng-click="vm.getRandomGiphy()">Random</button></p>
-        <img ng-src="{{vm.giphys.data.image_url}}" />
+        {{vm}}
+        <!-- <img ng-src="{{vm.giphys}}" /> -->
 
-    </div> -->
+    </div>
 
 
 </body>
